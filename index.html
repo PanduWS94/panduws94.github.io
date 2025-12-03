@@ -1,17 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Portfolio QA - Pand Wibisono</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Portfolio - Your Name</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #333;
+    }
+    header {
+      background: #0c4a6e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      font-weight: bold;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 26px;
+      color: #0c4a6e;
+    }
+    .project-list li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      font-size: 14px;
+    }
+    a {
+      color: #0c4a6e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Selamat datang di Portofolio QA saya</h1>
-  <p>Saya QA Engineer dengan fokus Manual & Automation Testing.</p>
+  <header>
+    <h1>Your Name</h1>
+    <p>QA Engineer • Manual & Automation • Web • API • Mobile</p>
+  </header>
 
-  <h2>Project Automation</h2>
-  <ul>
-    <li><a href="https://github.com/username/playwright-demo">Playwright Automation</a></li>
-    <li><a href="https://github.com/username/cypress-demo">Cypress Automation</a></li>
-    <li><a href="https://github.com/username/api-test-demo">API Test (Mocha Chai)</a></li>
-  </ul>
+  <div class="container">
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I'm a QA Engineer with experience in manual and automation testing using tools like
+        Cypress, Playwright, Appium, Postman, Mocha–Chai, and GitHub Actions. I focus on
+        reliability, maintainability, and scalable test automation.
+      </p>
+    </section>
+
+    <section>
+      <h2>Skills & Tools</h2>
+      <ul>
+        <li>UI Automation: Playwright, Cypress, Selenium</li>
+        <li>API Testing: Postman, Mocha–Chai, Newman</li>
+        <li>Mobile Testing: Appium (Android Emulator)</li>
+        <li>Test Documentation: Test Plan, RTM, Test Scenario</li>
+        <li>CI/CD: GitHub Actions</li>
+        <li>Database: MySQL, PostgreSQL (query validation)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Automation Projects</h2>
+      <ul class="project-list">
+        <li><a href="#">Playwright Web UI Automation</a> – Login, CRUD, validation, report</li>
+        <li><a href="#">Cypress E2E Automation</a> – Component testing & regression suite</li>
+        <li><a href="#">API Testing (Mocha/Chai)</a> – Auth, CRUD, status validation</li>
+        <li><a href="#">Mobile Test (Appium)</a> – Android login flow</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Video Demo (Automation Run)</h2>
+      <p>You can embed a YouTube video showing your automation test run:</p>
+
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: youremail@example.com</p>
+      <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="#">github.com/yourusername</a></p>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 Your Name — QA Portfolio
+  </footer>
 </body>
 </html>
