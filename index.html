@@ -6,63 +6,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QA Portfolio - Pandu Wibisono Subroto, S.T.</title>
   <style>
+    /* --- GLOBAL STYLE --- */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f6fa;
+      font-family: "Inter", Arial, sans-serif;
+      background: #f0f2f5;
       color: #333;
+      line-height: 1.6;
     }
 
+    h1,
+    h2 {
+      font-family: "Inter", sans-serif;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      color: #0ea5e9;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- HEADER --- */
     header {
-      background: #0c4a6e;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #0c4a6e, #0a3b55);
       color: white;
-      padding: 40px 20px;
       text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     header h1 {
       margin: 0;
-      font-size: 40px;
-      font-weight: bold;
+      font-size: 42px;
+      font-weight: 800;
     }
 
     header p {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 18px;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
+    /* --- CONTAINER --- */
     .container {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 50px auto;
       padding: 0 20px;
     }
 
+    /* --- CARD SECTION --- */
     section {
       background: white;
-      padding: 25px;
-      margin-bottom: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
     }
 
     h2 {
-      margin-top: 0;
       font-size: 26px;
+      margin-top: 0;
       color: #0c4a6e;
+      font-weight: 700;
+    }
+
+    ul {
+      padding-left: 18px;
     }
 
     .project-list li {
-      margin-bottom: 12px;
-      line-height: 1.6;
+      margin-bottom: 10px;
     }
 
+    /* --- VIDEO EMBED --- */
     .video-wrapper {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 14px;
       margin-top: 15px;
     }
 
@@ -75,23 +110,16 @@
       border: 0;
     }
 
+    /* --- FOOTER --- */
     footer {
       text-align: center;
-      padding: 30px;
-      color: #666;
+      padding: 40px;
+      color: #6b7280;
       font-size: 14px;
-    }
-
-    a {
-      color: #0c4a6e;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      margin-top: 40px;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
