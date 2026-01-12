@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyek Automation - Pandu Wibisono Subroto, S.T.</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SIDEBAR MENU -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>Pandu WS</span>
+            <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../../index.html" class="nav-link">🏠 Beranda</a></li>
+            <li><a href="../tentang-saya.html" class="nav-link">👤 Tentang Saya</a></li>
+            <li>
+                <button class="submenu-toggle nav-link active" href="./">
+                    🧪 Proyek Automation
+                    <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="sidebar-submenu active">
+                    <li><a href="./" class="active">Overview</a></li>
+                    <li><a href="api.html">API Testing</a></li>
+                    <li><a href="web-ui.html">Web UI</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                </ul>
+            </li>
+            <li><a href="../test-case.html" class="nav-link">📋 Test Case / BDD</a></li>
+            <li><a href="../bug-report.html" class="nav-link">🐛 Bug Report</a></li>
+            <li><a href="../writeup.html" class="nav-link">✍️ Writeup Testing</a></li>
+        </ul>
+    </aside>
+
+    <header>
+        <h1>Proyek Automation</h1>
+        <p>Portfolio lengkap proyek automation testing saya</p>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../../index.html">Beranda</a>
+            <span>/</span>
+            <span>Proyek Automation</span>
+        </div>
+
+        <section>
+            <h2>Pengenalan</h2>
+            <p>
+                Berikut adalah kumpulan proyek automation testing yang telah saya kerjakan. Setiap proyek dirancang
+                untuk menunjukkan kemampuan saya dalam berbagai aspek automation testing, mulai dari Web UI, API,
+                hingga Mobile testing.
+            </p>
+        </section>
+
+        <section>
+            <h2>Kategori Proyek</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-badge">API</span>
+                    <h3>API Testing</h3>
+                    <p>
+                        Automation testing untuk REST API endpoints menggunakan Mocha-Chai dan Postman.
+                        Mencakup authentication, CRUD operations, dan status validation.
+                    </p>
+                    <a href="api.html" class="btn">Lihat Proyek API</a>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge">WEB UI</span>
+                    <h3>Web UI Testing</h3>
+                    <p>
+                        End-to-end testing untuk aplikasi web menggunakan Playwright, Cypress, dan WebDriverIO.
+                        Termasuk component testing dan regression suite.
+                    </p>
+                    <a href="web-ui.html" class="btn">Lihat Proyek Web UI</a>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge">MOBILE</span>
+                    <h3>Mobile Testing</h3>
+                    <p>
+                        Automation testing untuk aplikasi mobile menggunakan Appium dan Maestro.
+                        Test untuk Android emulator dengan component dan regression testing.
+                    </p>
+                    <a href="mobile.html" class="btn">Lihat Proyek Mobile</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tech Stack Overview</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Tools/Framework</th>
+                        <th>Repository</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Web UI - Playwright</td>
+                        <td>Playwright, Node.js, Mocha</td>
+                        <td><a href="https://github.com/PanduWS94/playwright-demo-panduws94.git"
+                                target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td>Web UI - Cypress</td>
+                        <td>Cypress, JavaScript, BDD</td>
+                        <td><a href="https://github.com/PanduWS94/cypress-demo-panduws94.git" target="_blank">GitHub</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>API Testing</td>
+                        <td>Mocha, Chai, Node.js</td>
+                        <td><a href="https://github.com/PanduWS94/mochachai-demo-panduws94.git"
+                                target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td>Web UI - WebDriverIO</td>
+                        <td>WebDriverIO, JavaScript</td>
+                        <td><a href="https://github.com/PanduWS94/webdriverio-demo-panduws94.git"
+                                target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td>Web UI - Katalon</td>
+                        <td>Katalon Studio</td>
+                        <td><a href="https://github.com/PanduWS94/katalon-demo-panduws94.git" target="_blank">GitHub</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mobile - Appium</td>
+                        <td>Appium, Android Emulator</td>
+                        <td><a href="https://github.com/PanduWS94/mobile_appium-demo-panduws94.git"
+                                target="_blank">GitHub</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Metodologi Testing</h2>
+            <h3>Regression Testing</h3>
+            <p>Memastikan fitur yang sudah ada tidak rusak setelah ada perubahan atau update.</p>
+
+            <h3>Component Testing</h3>
+            <p>Testing unit-level untuk komponen individual sebelum di-integration.</p>
+
+            <h3>End-to-End (E2E) Testing</h3>
+            <p>Testing user flow lengkap dari start hingga end untuk memastikan user journey smooth.</p>
+
+            <h3>Behavior-Driven Development (BDD)</h3>
+            <p>Menggunakan Gherkin syntax untuk mendefinisikan test scenario yang lebih readable.</p>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Pandu Wibisono Subroto, S.T. — QA Portfolio
+    </footer>
+
+    <script src="../../assets/js/navigation.js"></script>
+</body>
+
+</html>

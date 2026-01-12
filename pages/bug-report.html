@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bug Report - Pandu Wibisono Subroto, S.T.</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SIDEBAR MENU -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>Pandu WS</span>
+            <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html" class="nav-link">🏠 Beranda</a></li>
+            <li><a href="tentang-saya.html" class="nav-link">👤 Tentang Saya</a></li>
+            <li>
+                <button class="submenu-toggle nav-link" href="proyek-automation/">
+                    🧪 Proyek Automation
+                    <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="sidebar-submenu">
+                    <li><a href="proyek-automation/">Overview</a></li>
+                    <li><a href="proyek-automation/api.html">API Testing</a></li>
+                    <li><a href="proyek-automation/web-ui.html">Web UI</a></li>
+                    <li><a href="proyek-automation/mobile.html">Mobile</a></li>
+                </ul>
+            </li>
+            <li><a href="test-case.html" class="nav-link">📋 Test Case / BDD</a></li>
+            <li><a href="bug-report.html" class="nav-link active">🐛 Bug Report</a></li>
+            <li><a href="writeup.html" class="nav-link">✍️ Writeup Testing</a></li>
+        </ul>
+    </aside>
+
+    <header>
+        <h1>Bug Report</h1>
+        <p>Contoh bug reports yang telah saya identifikasi dan dokumentasikan</p>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Beranda</a>
+            <span>/</span>
+            <span>Bug Report</span>
+        </div>
+
+        <section>
+            <h2>Standar Bug Report</h2>
+            <p>
+                Sebuah bug report yang baik harus memuat informasi lengkap agar developer dapat mereproduksi
+                dan memperbaiki bug dengan cepat. Berikut adalah standar format bug report yang saya gunakan:
+            </p>
+        </section>
+
+        <section>
+            <h2>Template Bug Report</h2>
+            <h3>Komponen Standar</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Deskripsi</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bug ID</strong></td>
+                        <td>Identifikasi unik untuk bug</td>
+                        <td>BUG-001 / BG-2025-001</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Title</strong></td>
+                        <td>Deskripsi singkat bug</td>
+                        <td>Login button tidak responsive pada mobile</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Severity</strong></td>
+                        <td>Critical/High/Medium/Low</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Priority</strong></td>
+                        <td>Urgensi perbaikan</td>
+                        <td>P1 (Top Priority)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status</strong></td>
+                        <td>New/Open/In Progress/Resolved/Closed</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Environment</strong></td>
+                        <td>Di mana bug ditemukan</td>
+                        <td>Chrome 120, iPhone 12, iOS 17</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Steps to Reproduce</strong></td>
+                        <td>Langkah-langkah mereproduksi bug</td>
+                        <td>1. Buka app... 2. Click... 3. Observe...</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Actual Result</strong></td>
+                        <td>Apa yang benar-benar terjadi</td>
+                        <td>Button tidak merespons klik</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Expected Result</strong></td>
+                        <td>Apa yang seharusnya terjadi</td>
+                        <td>Button harus merespons dan submit form</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Attachments</strong></td>
+                        <td>Screenshot, video, logs</td>
+                        <td>bug-screenshot.png, error-log.txt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Bug Report Contoh 1: Critical</h2>
+            <div class="card">
+                <h3>🔴 BUG-001: Login button tidak responsive pada mobile</h3>
+
+                <h4>Basic Information</h4>
+                <ul>
+                    <li><strong>Severity:</strong> <span style="color: #dc2626;">🔴 Critical</span></li>
+                    <li><strong>Priority:</strong> P1 - Top Priority</li>
+                    <li><strong>Status:</strong> Open</li>
+                    <li><strong>Assigned to:</strong> Dev Team Lead</li>
+                    <li><strong>Reported by:</strong> Pandu Wibisono</li>
+                    <li><strong>Date Reported:</strong> 2025-01-12</li>
+                </ul>
+
+                <h4>Environment</h4>
+                <ul>
+                    <li><strong>Device:</strong> iPhone 12</li>
+                    <li><strong>OS:</strong> iOS 17.2</li>
+                    <li><strong>Browser:</strong> Safari</li>
+                    <li><strong>App Version:</strong> 2.0.1</li>
+                    <li><strong>Build:</strong> Build 154</li>
+                </ul>
+
+                <h4>Steps to Reproduce</h4>
+                <ol>
+                    <li>Open the app on iPhone 12 with iOS 17.2</li>
+                    <li>Navigate to login page</li>
+                    <li>Enter valid credentials (email & password)</li>
+                    <li>Tap on the "Login" button</li>
+                </ol>
+
+                <h4>Actual Result</h4>
+                <p>
+                    The login button does not respond to taps. No visual feedback is shown, and no API request is made.
+                    The user is stuck on the login page without any error message or loading indicator.
+                </p>
+
+                <h4>Expected Result</h4>
+                <p>
+                    The login button should respond to taps with:
+                <ul>
+                    <li>Visual feedback (button depression/highlight)</li>
+                    <li>Loading spinner showing</li>
+                    <li>API call to authenticate user</li>
+                    <li>Redirect to dashboard upon successful login</li>
+                </ul>
+                </p>
+
+                <h4>Additional Details</h4>
+                <p>
+                    <strong>Frequency:</strong> Always<br>
+                    <strong>Does it occur in other browsers/devices?</strong> Yes, also occurs in Android Chrome 120<br>
+                    <strong>Workaround:</strong> None identified
+                </p>
+
+                <h4>Attachments</h4>
+                <p>
+                    📸 <a href="#">bug-001-screenshot.png</a><br>
+                    🎥 <a href="#">bug-001-video.mov</a><br>
+                    📋 <a href="#">error-console-log.txt</a>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Bug Report Contoh 2: High Severity</h2>
+            <div class="card">
+                <h3>🟠 BUG-002: Incorrect total price calculation with discount applied</h3>
+
+                <h4>Basic Information</h4>
+                <ul>
+                    <li><strong>Severity:</strong> <span style="color: #ea580c;">🟠 High</span></li>
+                    <li><strong>Priority:</strong> P1</li>
+                    <li><strong>Status:</strong> In Progress (Fix pending review)</li>
+                    <li><strong>Assigned to:</strong> Backend Team</li>
+                </ul>
+
+                <h4>Environment</h4>
+                <ul>
+                    <li><strong>Browser:</strong> Chrome 120</li>
+                    <li><strong>OS:</strong> Windows 11</li>
+                    <li><strong>API Version:</strong> v2.3.1</li>
+                    <li><strong>Database:</strong> Production</li>
+                </ul>
+
+                <h4>Steps to Reproduce</h4>
+                <ol>
+                    <li>Add product "Laptop" ($999.99) to cart</li>
+                    <li>Add product "Mouse" ($19.99) to cart</li>
+                    <li>Apply discount code "SAVE20" (20% off)</li>
+                    <li>Review cart and proceed to checkout</li>
+                </ol>
+
+                <h4>Actual Result</h4>
+                <p>
+                    <strong>Cart Summary:</strong><br>
+                    Subtotal: $1,019.98<br>
+                    Discount (20%): -$203.99<br>
+                    <span style="color: #dc2626;"><strong>Total: $815.99</strong> ❌ WRONG</span>
+                </p>
+
+                <h4>Expected Result</h4>
+                <p>
+                    <strong>Cart Summary:</strong><br>
+                    Subtotal: $1,019.98<br>
+                    Discount (20%): -$203.996 ≈ -$204.00<br>
+                    <span style="color: #16a34a;"><strong>Total: $815.98</strong> ✓ CORRECT</span>
+                </p>
+
+                <h4>Root Cause Analysis</h4>
+                <p>
+                    The discount calculation is being applied to individual items and then summed,
+                    instead of applying to the total. This causes rounding errors.
+                </p>
+
+                <h4>Impact</h4>
+                <ul>
+                    <li>Users are overcharged by $0.01 to $0.10 per transaction</li>
+                    <li>Affects all discount code transactions</li>
+                    <li>Potential revenue loss and customer complaints</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Bug Report Contoh 3: Medium Severity</h2>
+            <div class="card">
+                <h3>🟡 BUG-003: Search results pagination not working correctly</h3>
+
+                <h4>Basic Information</h4>
+                <ul>
+                    <li><strong>Severity:</strong> <span style="color: #eab308;">🟡 Medium</span></li>
+                    <li><strong>Priority:</strong> P2</li>
+                    <li><strong>Status:</strong> New</li>
+                </ul>
+
+                <h4>Steps to Reproduce</h4>
+                <ol>
+                    <li>Go to Products page</li>
+                    <li>Search for "shirt"</li>
+                    <li>Results show 50 items per page</li>
+                    <li>Click on "Page 2" button</li>
+                </ol>
+
+                <h4>Actual Result</h4>
+                <p>
+                    Page 2 button is highlighted as active, but the products shown are the same as Page 1.
+                    Pagination seems to be only visual without fetching new data.
+                </p>
+
+                <h4>Expected Result</h4>
+                <p>
+                    Clicking page 2 should display items 51-100 of the search results.
+                    Pagination should properly fetch and display different sets of products.
+                </p>
+
+                <h4>Workaround</h4>
+                <p>
+                    Users can use "Load More" button instead of pagination, which works correctly.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Bug Report Contoh 4: Low Severity</h2>
+            <div class="card">
+                <h3>🟢 BUG-004: Typo in confirmation dialog message</h3>
+
+                <h4>Basic Information</h4>
+                <ul>
+                    <li><strong>Severity:</strong> <span style="color: #84cc16;">🟢 Low</span></li>
+                    <li><strong>Priority:</strong> P3</li>
+                    <li><strong>Status:</strong> New</li>
+                </ul>
+
+                <h4>Issue Description</h4>
+                <p>
+                    The delete confirmation dialog shows the message:<br>
+                    <code>"Are you sure you want to delete this item? This action cannot be undone."</code>
+                </p>
+                <p>
+                    But it should say:<br>
+                    <code>"Are you sure you want to delete this item? This action cannot be undone."</code>
+                </p>
+
+                <h4>Current Text (Wrong)</h4>
+                <pre><code>"Are you sure want to delete..."</code></pre>
+
+                <h4>Corrected Text</h4>
+                <pre><code>"Are you sure you want to delete..."</code></pre>
+
+                <h4>Impact</h4>
+                <p>Minimal - Only affects text display, no functional impact.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Best Practices untuk Bug Reporting</h2>
+            <ul>
+                <li>✅ <strong>Be Specific:</strong> Jangan gunakan "tidak bekerja", jelaskan spesifiknya</li>
+                <li>✅ <strong>Include Screenshots/Videos:</strong> Visual evidence sangat membantu</li>
+                <li>✅ <strong>Provide Steps to Reproduce:</strong> Developer harus bisa mereproduksi bug</li>
+                <li>✅ <strong>Include Environment Details:</strong> Browser, OS, app version, dll</li>
+                <li>✅ <strong>Separate Issues:</strong> Satu bug report untuk satu issue saja</li>
+                <li>✅ <strong>Use Clear Severity Levels:</strong> Jangan overstate atau understate severity</li>
+                <li>✅ <strong>Check for Duplicates:</strong> Pastikan bug belum dilaporkan sebelumnya</li>
+                <li>✅ <strong>Provide Expected vs Actual:</strong> Comparison membantu clarity</li>
+                <li>✅ <strong>Add Attachments:</strong> Screenshots, logs, network traces</li>
+                <li>✅ <strong>Follow Up:</strong> Komunikasi dengan dev untuk clarification jika perlu</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Severity & Priority Levels</h2>
+            <h3>Severity Levels</h3>
+            <ul>
+                <li><strong>🔴 Critical:</strong> Application crash, security vulnerability, data loss</li>
+                <li><strong>🟠 High:</strong> Major functionality broken, significant user impact</li>
+                <li><strong>🟡 Medium:</strong> Feature not working as expected, limited user impact</li>
+                <li><strong>🟢 Low:</strong> Minor issues, cosmetic problems, typos</li>
+                <li><strong>⚪ Trivial:</strong> Suggestions for improvement, not a bug</li>
+            </ul>
+
+            <h3>Priority Levels</h3>
+            <ul>
+                <li><strong>P0/P1:</strong> Must fix immediately, blocks release</li>
+                <li><strong>P2:</strong> Should fix soon, affects user experience</li>
+                <li><strong>P3:</strong> Nice to fix, minor impact</li>
+                <li><strong>P4:</strong> Low priority, can wait</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tools untuk Bug Tracking</h2>
+            <ul>
+                <li>🔗 <strong>Jira:</strong> Enterprise-grade issue tracking</li>
+                <li>🔗 <strong>Azure DevOps:</strong> Integrated with Microsoft ecosystem</li>
+                <li>🔗 <strong>GitHub Issues:</strong> Simple dan terintegrasi dengan git</li>
+                <li>🔗 <strong>Bugzilla:</strong> Open source bug tracking</li>
+                <li>🔗 <strong>Linear:</strong> Modern issue tracking tool</li>
+                <li>🔗 <strong>YouTrack:</strong> Flexible issue tracking by JetBrains</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Pandu Wibisono Subroto, S.T. — QA Portfolio
+    </footer>
+
+    <script src="../assets/js/navigation.js"></script>
+</body>
+
+</html>

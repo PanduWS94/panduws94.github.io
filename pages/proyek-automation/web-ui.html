@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web UI Testing - Proyek Automation</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SIDEBAR MENU -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>Pandu WS</span>
+            <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../../index.html" class="nav-link">🏠 Beranda</a></li>
+            <li><a href="../tentang-saya.html" class="nav-link">👤 Tentang Saya</a></li>
+            <li>
+                <button class="submenu-toggle nav-link" href="./">
+                    🧪 Proyek Automation
+                    <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="sidebar-submenu">
+                    <li><a href="./">Overview</a></li>
+                    <li><a href="api.html">API Testing</a></li>
+                    <li><a href="web-ui.html" class="active">Web UI</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                </ul>
+            </li>
+            <li><a href="../test-case.html" class="nav-link">📋 Test Case / BDD</a></li>
+            <li><a href="../bug-report.html" class="nav-link">🐛 Bug Report</a></li>
+            <li><a href="../writeup.html" class="nav-link">✍️ Writeup Testing</a></li>
+        </ul>
+    </aside>
+
+    <header>
+        <h1>Web UI Testing</h1>
+        <p>End-to-end automation testing untuk aplikasi web</p>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../../index.html">Beranda</a>
+            <span>/</span>
+            <a href="./">Proyek Automation</a>
+            <span>/</span>
+            <span>Web UI Testing</span>
+        </div>
+
+        <section>
+            <h2>Proyek Web UI Testing</h2>
+            <p>
+                Saya memiliki beberapa proyek untuk Web UI Testing menggunakan berbagai tools dan framework modern.
+                Setiap proyek dirancang untuk menunjukkan kemampuan dalam automation testing, component testing,
+                dan end-to-end testing dengan best practices.
+            </p>
+        </section>
+
+        <section>
+            <h2>1. Playwright Web UI Automation</h2>
+            <div class="card">
+                <h3>📌 Overview</h3>
+                <p>
+                    Automation testing menggunakan Playwright, sebuah browser automation library yang modern
+                    dan powerful untuk testing web applications.
+                </p>
+                <ul>
+                    <li><strong>Framework:</strong> Playwright, Node.js</li>
+                    <li><strong>Test Type:</strong> Component Testing, Regression Suite</li>
+                    <li><strong>Reporting:</strong> HTML Report, Screenshots on failure</li>
+                    <li><strong>Repository:</strong> <a
+                            href="https://github.com/PanduWS94/playwright-demo-panduws94.git" target="_blank">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Cypress E2E Automation with BDD</h2>
+            <div class="card">
+                <h3>📌 Overview</h3>
+                <p>
+                    End-to-end testing menggunakan Cypress dengan Behavior-Driven Development (BDD) approach.
+                    Menggunakan Gherkin syntax untuk mendefinisikan test scenario yang lebih readable.
+                </p>
+                <ul>
+                    <li><strong>Framework:</strong> Cypress, Cucumber</li>
+                    <li><strong>Approach:</strong> BDD (Behavior-Driven Development)</li>
+                    <li><strong>Test Type:</strong> Component Testing, Regression Suite, E2E</li>
+                    <li><strong>Reporting:</strong> Mochawesome, Video Recording</li>
+                    <li><strong>Repository:</strong> <a href="https://github.com/PanduWS94/cypress-demo-panduws94.git"
+                            target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. WebDriverIO Web UI Automation</h2>
+            <div class="card">
+                <h3>📌 Overview</h3>
+                <p>
+                    Automation testing menggunakan WebDriverIO dengan WebDriver protocol.
+                    Fleksibel dan dapat digunakan untuk web dan mobile automation.
+                </p>
+                <ul>
+                    <li><strong>Framework:</strong> WebDriverIO, JavaScript</li>
+                    <li><strong>Test Type:</strong> Component Testing, Regression Suite</li>
+                    <li><strong>Reporting:</strong> HTML Report</li>
+                    <li><strong>Repository:</strong> <a
+                            href="https://github.com/PanduWS94/webdriverio-demo-panduws94.git"
+                            target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Katalon UI Automation</h2>
+            <div class="card">
+                <h3>📌 Overview</h3>
+                <p>
+                    Automation testing menggunakan Katalon Studio, sebuah all-in-one automation testing platform.
+                    User-friendly dengan built-in features untuk test management dan reporting.
+                </p>
+                <ul>
+                    <li><strong>Tool:</strong> Katalon Studio</li>
+                    <li><strong>Test Type:</strong> Component Testing, Regression Suite</li>
+                    <li><strong>Reporting:</strong> Built-in HTML Report</li>
+                    <li><strong>Repository:</strong> <a href="https://github.com/PanduWS94/katalon-demo-panduws94.git"
+                            target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contoh Playwright Test Case</h2>
+            <pre><code>import { test, expect } from '@playwright/test';
+
+test.describe('Login Functionality', () => {
+  test('should login successfully with valid credentials', async ({ page }) => {
+    await page.goto('https://example.com/login');
+    
+    // Fill login form
+    await page.fill('[name="email"]', 'test@example.com');
+    await page.fill('[name="password"]', 'password123');
+    
+    // Click login button
+    await page.click('button[type="submit"]');
+    
+    // Verify successful login
+    await expect(page).toHaveURL('https://example.com/dashboard');
+    await expect(page.locator('text=Welcome')).toBeVisible();
+  });
+
+  test('should show error with invalid password', async ({ page }) => {
+    await page.goto('https://example.com/login');
+    
+    await page.fill('[name="email"]', 'test@example.com');
+    await page.fill('[name="password"]', 'wrongpassword');
+    await page.click('button[type="submit"]');
+    
+    // Verify error message
+    await expect(page.locator('.error-message')).toContainText('Invalid credentials');
+  });
+});</code></pre>
+        </section>
+
+        <section>
+            <h2>Contoh Cypress BDD Test Case</h2>
+            <pre><code>Feature: User Login
+  Scenario: User logs in with valid credentials
+    Given User is on the login page
+    When User enters valid email and password
+    And User clicks the login button
+    Then User should be redirected to dashboard
+    And User should see welcome message</code></pre>
+        </section>
+
+        <section>
+            <h2>Common Test Scenarios</h2>
+            <ul>
+                <li>✅ Form Filling & Validation</li>
+                <li>✅ Navigation & Page Transitions</li>
+                <li>✅ Element Visibility & State Changes</li>
+                <li>✅ Data Input & Error Messages</li>
+                <li>✅ Button Clicks & Events</li>
+                <li>✅ Modal & Pop-up Handling</li>
+                <li>✅ Dropdown & Select Options</li>
+                <li>✅ File Upload/Download</li>
+                <li>✅ API Mocking & Stubbing</li>
+                <li>✅ Performance & Load Testing</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Best Practices</h2>
+            <ul>
+                <li>✅ Page Object Model (POM) untuk maintainability</li>
+                <li>✅ Proper wait strategies (explicit vs implicit)</li>
+                <li>✅ Data-driven testing dengan parameterization</li>
+                <li>✅ Screenshot & video recording on failure</li>
+                <li>✅ Parallel test execution untuk faster feedback</li>
+                <li>✅ Proper cleanup dan teardown</li>
+                <li>✅ CI/CD integration untuk continuous testing</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Pandu Wibisono Subroto, S.T. — QA Portfolio
+    </footer>
+
+    <script src="../../assets/js/navigation.js"></script>
+</body>
+
+</html>

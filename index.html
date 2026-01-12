@@ -4,133 +4,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QA Portfolio - Pandu Wibisono Subroto, S.T.</title>
+  <title>Beranda - QA Portfolio Pandu Wibisono</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <style>
-    /* --- GLOBAL STYLE --- */
-    body {
-      margin: 0;
-      font-family: "Inter", Arial, sans-serif;
-      background: #f0f2f5;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    h1,
-    h2 {
-      font-family: "Inter", sans-serif;
-      letter-spacing: -0.5px;
-    }
-
-    a {
-      color: #0ea5e9;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* --- HEADER --- */
-    header {
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #0c4a6e, #0a3b55);
-      color: white;
-      text-align: center;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-      font-weight: 800;
-    }
-
-    header p {
-      margin-top: 12px;
-      font-size: 18px;
-      opacity: 0.95;
-    }
-
-    /* --- CONTAINER --- */
-    .container {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    /* --- CARD SECTION --- */
-    section {
-      background: white;
-      padding: 30px;
-      margin-bottom: 30px;
-      border-radius: 18px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    }
-
-    h2 {
-      font-size: 26px;
-      margin-top: 0;
-      color: #0c4a6e;
-      font-weight: 700;
-    }
-
-    ul {
-      padding-left: 18px;
-    }
-
-    .project-list li {
-      margin-bottom: 10px;
-    }
-
-    /* --- VIDEO EMBED --- */
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 14px;
-      margin-top: 15px;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* --- FOOTER --- */
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #6b7280;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- SIDEBAR MENU -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span>Pandu WS</span>
+      <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="index.html" class="nav-link">🏠 Beranda</a></li>
+      <li><a href="pages/tentang-saya.html" class="nav-link">👤 Tentang Saya</a></li>
+      <li>
+        <button class="submenu-toggle nav-link">
+          🧪 Proyek Automation
+          <span class="submenu-icon">▼</span>
+        </button>
+        <ul class="sidebar-submenu">
+          <li><a href="pages/proyek-automation/">Overview</a></li>
+          <li><a href="pages/proyek-automation/api.html">API Testing</a></li>
+          <li><a href="pages/proyek-automation/web-ui.html">Web UI</a></li>
+          <li><a href="pages/proyek-automation/mobile.html">Mobile</a></li>
+        </ul>
+      </li>
+      <li><a href="pages/test-case.html" class="nav-link">📋 Test Case / BDD</a></li>
+      <li><a href="pages/bug-report.html" class="nav-link">🐛 Bug Report</a></li>
+      <li><a href="pages/writeup.html" class="nav-link">✍️ Writeup Testing</a></li>
+    </ul>
+  </aside>
+
   <header>
     <h1>Pandu Wibisono Subroto, S.T.</h1>
     <p>QA Engineer • Manual & Automation • Web • API • Mobile</p>
   </header>
 
   <div class="container">
-    <section>
+    <section id="about">
       <h2>About Me</h2>
       <p>
         I'm a QA Engineer with experience in manual and automation testing using tools like
@@ -139,7 +53,7 @@
       </p>
     </section>
 
-    <section>
+    <section id="skills">
       <h2>Skills & Tools</h2>
       <ul>
         <li>UI Automation: Playwright, Cypress, WebDriverIO, Katalon</li>
@@ -151,7 +65,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Automation Projects</h2>
       <ul class="project-list">
         <li>
@@ -202,7 +116,7 @@
     </section>
 
 
-    <section>
+    <section id="video">
       <h2>Video Demo (Automation Run)</h2>
       <p>You can embed a YouTube video showing your automation test run:</p>
 
@@ -213,7 +127,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
       <p>Email: subroto.panduwibisono@gmail.com</p>
       <p>LinkedIn: <a
@@ -225,6 +139,8 @@
   <footer>
     © 2025 Pandu Wibisono Subroto, S.T. — QA Portfolio
   </footer>
+
+  <script src="assets/js/navigation.js"></script>
 </body>
 
 </html>
