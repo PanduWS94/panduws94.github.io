@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Testing - Proyek Automation</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SIDEBAR MENU -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>Pandu WS</span>
+            <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../../index.html" class="nav-link">🏠 Beranda</a></li>
+            <li><a href="../tentang-saya.html" class="nav-link">👤 Tentang Saya</a></li>
+            <li>
+                <button class="submenu-toggle nav-link" href="./">
+                    🧪 Proyek Automation
+                    <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="sidebar-submenu">
+                    <li><a href="./">Overview</a></li>
+                    <li><a href="api.html" class="active">API Testing</a></li>
+                    <li><a href="web-ui.html">Web UI</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                </ul>
+            </li>
+            <li><a href="../test-case.html" class="nav-link">📋 Test Case / BDD</a></li>
+            <li><a href="../bug-report.html" class="nav-link">🐛 Bug Report</a></li>
+            <li><a href="../writeup.html" class="nav-link">✍️ Writeup Testing</a></li>
+        </ul>
+    </aside>
+
+    <header>
+        <h1>API Testing</h1>
+        <p>Automation testing untuk REST API endpoints</p>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../../index.html">Beranda</a>
+            <span>/</span>
+            <a href="./">Proyek Automation</a>
+            <span>/</span>
+            <span>API Testing</span>
+        </div>
+
+        <section>
+            <h2>Proyek: Mocha-Chai API Testing</h2>
+            <p>
+                Automation testing untuk REST API menggunakan Mocha sebagai test framework dan Chai sebagai assertion
+                library.
+                Proyek ini mencakup testing untuk authentication, CRUD operations, dan status code validation.
+            </p>
+            <a href="https://github.com/PanduWS94/mochachai-demo-panduws94.git" target="_blank" class="btn">
+                🔗 Lihat Repository
+            </a>
+        </section>
+
+        <section>
+            <h2>Tech Stack</h2>
+            <ul>
+                <li><strong>Framework:</strong> Mocha</li>
+                <li><strong>Assertion Library:</strong> Chai</li>
+                <li><strong>HTTP Client:</strong> Axios / Node-Fetch</li>
+                <li><strong>Language:</strong> JavaScript (Node.js)</li>
+                <li><strong>Reporting:</strong> Mochawesome</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Scope Testing</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Authentication</h3>
+                    <p>
+                        Testing login flow, token generation, dan authorization headers.
+                        Memastikan credential validation berjalan dengan benar.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>CRUD Operations</h3>
+                    <p>
+                        Testing Create, Read, Update, Delete operations pada berbagai endpoint.
+                        Validasi response body dan struktur data.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Status Code Validation</h3>
+                    <p>
+                        Memverifikasi HTTP status codes yang tepat (200, 201, 400, 401, 404, 500, dll)
+                        untuk setiap request.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Response Validation</h3>
+                    <p>
+                        Validasi struktur JSON response, tipe data, dan values.
+                        Testing edge cases dan error handling.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contoh Test Case</h2>
+            <h3>Login API Test</h3>
+            <pre><code>describe('Authentication API', () => {
+  it('should login successfully with valid credentials', async () => {
+    const response = await axios.post('/api/auth/login', {
+      email: 'test@example.com',
+      password: 'password123'
+    });
+
+    expect(response.status).to.equal(200);
+    expect(response.data).to.have.property('token');
+    expect(response.data.user).to.have.property('email');
+  });
+
+  it('should fail login with invalid credentials', async () => {
+    try {
+      await axios.post('/api/auth/login', {
+        email: 'test@example.com',
+        password: 'wrongpassword'
+      });
+    } catch (error) {
+      expect(error.response.status).to.equal(401);
+      expect(error.response.data).to.have.property('message');
+    }
+  });
+});</code></pre>
+        </section>
+
+        <section>
+            <h2>Setup & Running Tests</h2>
+            <h3>Installation</h3>
+            <pre><code>npm install mocha chai axios mochawesome</code></pre>
+
+            <h3>Running Tests</h3>
+            <pre><code>npm test
+# atau dengan reporter HTML
+npm test -- --reporter mochawesome</code></pre>
+        </section>
+
+        <section>
+            <h2>Best Practices yang Diterapkan</h2>
+            <ul>
+                <li>✅ Descriptive test names yang jelas dan mudah dipahami</li>
+                <li>✅ Organized test structure dengan describe blocks</li>
+                <li>✅ Proper assertion dan error handling</li>
+                <li>✅ Test data management dan cleanup</li>
+                <li>✅ Request/response logging untuk debugging</li>
+                <li>✅ Timeout configuration untuk API calls yang slow</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Pandu Wibisono Subroto, S.T. — QA Portfolio
+    </footer>
+
+    <script src="../../assets/js/navigation.js"></script>
+</body>
+
+</html>

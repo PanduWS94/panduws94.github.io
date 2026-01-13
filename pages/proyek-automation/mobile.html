@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Testing - Proyek Automation</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SIDEBAR MENU -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>Pandu WS</span>
+            <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../../index.html" class="nav-link">🏠 Beranda</a></li>
+            <li><a href="../tentang-saya.html" class="nav-link">👤 Tentang Saya</a></li>
+            <li>
+                <button class="submenu-toggle nav-link" href="./">
+                    🧪 Proyek Automation
+                    <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="sidebar-submenu">
+                    <li><a href="./">Overview</a></li>
+                    <li><a href="api.html">API Testing</a></li>
+                    <li><a href="web-ui.html">Web UI</a></li>
+                    <li><a href="mobile.html" class="active">Mobile</a></li>
+                </ul>
+            </li>
+            <li><a href="../test-case.html" class="nav-link">📋 Test Case / BDD</a></li>
+            <li><a href="../bug-report.html" class="nav-link">🐛 Bug Report</a></li>
+            <li><a href="../writeup.html" class="nav-link">✍️ Writeup Testing</a></li>
+        </ul>
+    </aside>
+
+    <header>
+        <h1>Mobile Testing</h1>
+        <p>Automation testing untuk aplikasi mobile</p>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../../index.html">Beranda</a>
+            <span>/</span>
+            <a href="./">Proyek Automation</a>
+            <span>/</span>
+            <span>Mobile Testing</span>
+        </div>
+
+        <section>
+            <h2>Proyek: Appium Mobile Automation</h2>
+            <p>
+                Automation testing untuk aplikasi mobile (Android) menggunakan Appium dan WebDriverIO.
+                Proyek ini mencakup component testing dan regression testing dengan emulator Android.
+            </p>
+            <a href="https://github.com/PanduWS94/mobile_appium-demo-panduws94.git" target="_blank" class="btn">
+                🔗 Lihat Repository
+            </a>
+        </section>
+
+        <section>
+            <h2>Tech Stack</h2>
+            <ul>
+                <li><strong>Automation Tool:</strong> Appium</li>
+                <li><strong>Framework:</strong> WebDriverIO / Mocha</li>
+                <li><strong>Platform:</strong> Android</li>
+                <li><strong>Device:</strong> Android Emulator</li>
+                <li><strong>Language:</strong> JavaScript (Node.js)</li>
+                <li><strong>Reporting:</strong> HTML Report, Screenshots</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Setup & Prerequisites</h2>
+            <h3>Requirements</h3>
+            <ul>
+                <li>Java JDK installed and configured</li>
+                <li>Android SDK & Android Emulator</li>
+                <li>Appium Server</li>
+                <li>Node.js dengan npm</li>
+            </ul>
+
+            <h3>Installation</h3>
+            <pre><code>npm install appium webdriverio @wdio/mocha-framework
+npm install --save-dev @wdio/cli
+
+# Start Appium Server
+appium</code></pre>
+        </section>
+
+        <section>
+            <h2>Scope Testing</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Touch & Gesture</h3>
+                    <p>
+                        Testing tap, long press, swipe, scroll, dan gesture lainnya.
+                        Memastikan user interactions berfungsi dengan baik.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Element Interaction</h3>
+                    <p>
+                        Testing button clicks, text input, dropdown selection, checkbox, radio button.
+                        Testing berbagai elemen UI di aplikasi mobile.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Navigation</h3>
+                    <p>
+                        Testing navigation between screens, back button behavior,
+                        deep linking, dan push notifications.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Performance</h3>
+                    <p>
+                        Testing app response time, memory usage, battery consumption.
+                        Memastikan aplikasi performant pada berbagai devices.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contoh Test Case - Login</h2>
+            <pre><code>describe('Mobile App Login', () => {
+  beforeEach(async () => {
+    // Launch app
+    await driver.launch();
+  });
+
+  it('should login successfully with valid credentials', async () => {
+    // Find email input
+    const emailInput = await driver.$('//android.widget.EditText[@text="Email"]');
+    await emailInput.click();
+    await emailInput.setValue('test@example.com');
+
+    // Find password input
+    const passwordInput = await driver.$('//android.widget.EditText[@text="Password"]');
+    await passwordInput.click();
+    await passwordInput.setValue('password123');
+
+    // Click login button
+    const loginBtn = await driver.$('//android.widget.Button[@text="Login"]');
+    await loginBtn.click();
+
+    // Wait and verify success
+    await driver.pause(2000);
+    const welcome = await driver.$('//android.widget.TextView[@text="Welcome"]');
+    expect(await welcome.isDisplayed()).toBe(true);
+  });
+
+  it('should show error with invalid credentials', async () => {
+    const emailInput = await driver.$('//android.widget.EditText[@text="Email"]');
+    await emailInput.setValue('test@example.com');
+
+    const passwordInput = await driver.$('//android.widget.EditText[@text="Password"]');
+    await passwordInput.setValue('wrongpassword');
+
+    const loginBtn = await driver.$('//android.widget.Button[@text="Login"]');
+    await loginBtn.click();
+
+    // Verify error message
+    const errorMsg = await driver.$('//android.widget.TextView[@text="Invalid credentials"]');
+    expect(await errorMsg.isDisplayed()).toBe(true);
+  });
+});</code></pre>
+        </section>
+
+        <section>
+            <h2>Contoh Test Case - Swipe & Scroll</h2>
+            <pre><code>describe('Mobile Gestures', () => {
+  it('should swipe to next item in carousel', async () => {
+    const carousel = await driver.$('//android.widget.FrameLayout[@resource-id="com.example:id/carousel"]');
+    
+    // Swipe left
+    await driver.touchAction([
+      { action: 'press', element: carousel },
+      { action: 'moveTo', x: -200, y: 0 },
+      { action: 'release' }
+    ]);
+
+    // Verify next item is displayed
+    await driver.pause(500);
+    const nextItem = await driver.$('//android.widget.TextView[@text="Item 2"]');
+    expect(await nextItem.isDisplayed()).toBe(true);
+  });
+
+  it('should scroll down to load more items', async () => {
+    const listView = await driver.$('//android.widget.ListView');
+    
+    // Scroll down
+    await driver.scroll(listView, 'down', 3);
+    
+    // Verify more items loaded
+    const lastItem = await driver.$('//android.widget.TextView[@text="Item 20"]');
+    expect(await lastItem.isDisplayed()).toBe(true);
+  });
+});</code></pre>
+        </section>
+
+        <section>
+            <h2>Emulator Configuration</h2>
+            <h3>Creating Android Virtual Device</h3>
+            <pre><code>android avd  # Android Virtual Device Manager
+# atau via command line
+sdkmanager "system-images;android-13;google_apis;x86_64"
+avdmanager create avd -n "test-avd" -k "system-images;android-13;google_apis;x86_64"</code></pre>
+
+            <h3>Starting Emulator</h3>
+            <pre><code>emulator -avd test-avd</code></pre>
+        </section>
+
+        <section>
+            <h2>Locating Mobile Elements</h2>
+            <h3>Common Locator Strategies</h3>
+            <ul>
+                <li><strong>XPath:</strong> <code>//android.widget.Button[@text="Login"]</code></li>
+                <li><strong>Resource ID:</strong>
+                    <code>//android.widget.Button[@resource-id="com.example:id/login_btn"]</code></li>
+                <li><strong>Class Name:</strong> <code>//android.widget.EditText</code></li>
+                <li><strong>Content Description:</strong>
+                    <code>//android.widget.Button[@content-desc="Login Button"]</code></li>
+            </ul>
+
+            <h3>Tools untuk Inspecting Elements</h3>
+            <ul>
+                <li>Appium Inspector</li>
+                <li>Android Studio Emulator Device Manager</li>
+                <li>Appium-Python-Client dengan UI Inspector</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Best Practices</h2>
+            <ul>
+                <li>✅ Proper device configuration dan setup</li>
+                <li>✅ Waits & synchronization untuk slow devices</li>
+                <li>✅ Proper cleanup setelah test (app reset)</li>
+                <li>✅ Screenshot capture on failure</li>
+                <li>✅ Test data management untuk mobile</li>
+                <li>✅ Testing berbagai device types & OS versions</li>
+                <li>✅ Network condition simulation</li>
+                <li>✅ Permission handling (location, camera, contacts)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tools Tambahan</h2>
+            <ul>
+                <li><strong>Maestro:</strong> Alternative untuk mobile testing dengan declarative syntax</li>
+                <li><strong>Android Studio Profiler:</strong> Untuk performance monitoring</li>
+                <li><strong>Logcat:</strong> Untuk app logging dan debugging</li>
+                <li><strong>Appium UiAutomator2:</strong> Backend untuk improved Android testing</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Pandu Wibisono Subroto, S.T. — QA Portfolio
+    </footer>
+
+    <script src="../../assets/js/navigation.js"></script>
+</body>
+
+</html>

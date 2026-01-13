@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Case & BDD - Pandu Wibisono Subroto, S.T.</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SIDEBAR MENU -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>Pandu WS</span>
+            <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html" class="nav-link">🏠 Beranda</a></li>
+            <li><a href="tentang-saya.html" class="nav-link">👤 Tentang Saya</a></li>
+            <li>
+                <button class="submenu-toggle nav-link" href="proyek-automation/">
+                    🧪 Proyek Automation
+                    <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="sidebar-submenu">
+                    <li><a href="proyek-automation/">Overview</a></li>
+                    <li><a href="proyek-automation/api.html">API Testing</a></li>
+                    <li><a href="proyek-automation/web-ui.html">Web UI</a></li>
+                    <li><a href="proyek-automation/mobile.html">Mobile</a></li>
+                </ul>
+            </li>
+            <li><a href="test-case.html" class="nav-link active">📋 Test Case / BDD</a></li>
+            <li><a href="bug-report.html" class="nav-link">🐛 Bug Report</a></li>
+            <li><a href="writeup.html" class="nav-link">✍️ Writeup Testing</a></li>
+        </ul>
+    </aside>
+
+    <header>
+        <h1>Test Case & BDD</h1>
+        <p>Contoh test cases dan Behavior-Driven Development scenarios</p>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Beranda</a>
+            <span>/</span>
+            <span>Test Case & BDD</span>
+        </div>
+
+        <section>
+            <h2>Pengenalan</h2>
+            <p>
+                Halaman ini menampilkan contoh test cases yang telah saya buat serta implementasi
+                Behavior-Driven Development (BDD) menggunakan Gherkin syntax. BDD adalah approach
+                yang menggabungkan testing dengan dokumentasi yang lebih readable oleh non-technical stakeholders.
+            </p>
+        </section>
+
+        <section>
+            <h2>Test Case Format</h2>
+            <h3>Standar Test Case</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Komponen</th>
+                        <th>Deskripsi</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Test Case ID</td>
+                        <td>Identifikasi unik untuk test case</td>
+                        <td>TC-001</td>
+                    </tr>
+                    <tr>
+                        <td>Test Title</td>
+                        <td>Deskripsi singkat tentang test</td>
+                        <td>User dapat login dengan kredensial yang valid</td>
+                    </tr>
+                    <tr>
+                        <td>Precondition</td>
+                        <td>Kondisi awal sebelum test dijalankan</td>
+                        <td>User belum login, sudah di halaman login</td>
+                    </tr>
+                    <tr>
+                        <td>Test Steps</td>
+                        <td>Langkah-langkah yang dilakukan</td>
+                        <td>1. Masukkan email 2. Masukkan password 3. Klik login</td>
+                    </tr>
+                    <tr>
+                        <td>Expected Result</td>
+                        <td>Hasil yang diharapkan</td>
+                        <td>User berhasil login dan diarahkan ke dashboard</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Contoh Test Case 1: User Login</h2>
+            <h3>TC-001: Login dengan Kredensial Valid</h3>
+            <table>
+                <tr>
+                    <th>Precondition</th>
+                    <td>User sudah terdaftar di sistem</td>
+                </tr>
+                <tr>
+                    <th>Test Steps</th>
+                    <td>
+                        1. Navigasi ke halaman login<br>
+                        2. Masukkan email: test@example.com<br>
+                        3. Masukkan password: password123<br>
+                        4. Klik tombol "Login"
+                    </td>
+                </tr>
+                <tr>
+                    <th>Expected Result</th>
+                    <td>
+                        ✓ User berhasil login<br>
+                        ✓ Halaman redirect ke dashboard<br>
+                        ✓ Username ditampilkan di top right<br>
+                        ✓ Token disimpan di localStorage
+                    </td>
+                </tr>
+            </table>
+
+            <h3>TC-002: Login dengan Kredensial Invalid</h3>
+            <table>
+                <tr>
+                    <th>Precondition</th>
+                    <td>User sudah di halaman login</td>
+                </tr>
+                <tr>
+                    <th>Test Steps</th>
+                    <td>
+                        1. Navigasi ke halaman login<br>
+                        2. Masukkan email: test@example.com<br>
+                        3. Masukkan password: wrongpassword<br>
+                        4. Klik tombol "Login"
+                    </td>
+                </tr>
+                <tr>
+                    <th>Expected Result</th>
+                    <td>
+                        ✓ Login gagal<br>
+                        ✓ Pesan error ditampilkan: "Invalid credentials"<br>
+                        ✓ User tetap di halaman login<br>
+                        ✓ Token tidak dibuat
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>BDD dengan Gherkin Syntax</h2>
+            <p>
+                Behavior-Driven Development (BDD) menggunakan format Gherkin yang lebih mudah dipahami
+                oleh semua pihak (developer, tester, business analyst).
+            </p>
+
+            <h3>Feature File: User Authentication</h3>
+            <pre><code>Feature: User Authentication
+  As a user
+  I want to login to the application
+  So that I can access my personal dashboard
+
+  Scenario: User logs in with valid credentials
+    Given User is on the login page
+    When User enters email "test@example.com"
+    And User enters password "password123"
+    And User clicks the login button
+    Then User should be redirected to the dashboard
+    And User should see "Welcome Back" message
+    And User profile should be visible
+
+  Scenario: User login fails with invalid password
+    Given User is on the login page
+    When User enters email "test@example.com"
+    And User enters password "wrongpassword"
+    And User clicks the login button
+    Then User should see error message "Invalid credentials"
+    And User should remain on the login page
+
+  Scenario: User login fails with empty email
+    Given User is on the login page
+    When User leaves the email field empty
+    And User enters password "password123"
+    And User clicks the login button
+    Then User should see validation error "Email is required"
+    And The login button should be disabled</code></pre>
+        </section>
+
+        <section>
+            <h2>Feature File: Product Management</h2>
+            <pre><code>Feature: Product Management
+  As a user
+  I want to manage products
+  So that I can keep my inventory updated
+
+  Scenario: Add new product
+    Given User is logged in
+    And User is on the products page
+    When User clicks "Add Product" button
+    And User fills in the following product details:
+      | Field       | Value                      |
+      | Name        | New Test Product           |
+      | Description | This is a test product     |
+      | Price       | 99.99                      |
+      | Category    | Electronics                |
+    And User clicks the "Save" button
+    Then Product should be created successfully
+    And "New Test Product" should appear in the product list
+    And Success message should display "Product added successfully"
+
+  Scenario: Edit existing product
+    Given User is logged in
+    And Product "Laptop" exists in the system
+    When User searches for "Laptop"
+    And User clicks the edit icon
+    And User changes price to "1299.99"
+    And User clicks "Save"
+    Then Product price should be updated
+    And Updated timestamp should reflect the change
+
+  Scenario: Delete product
+    Given User is logged in
+    And Product "Old Product" exists
+    When User searches for "Old Product"
+    And User clicks the delete icon
+    And User confirms the deletion
+    Then Product should be removed from the list
+    And Deletion confirmation message should appear</code></pre>
+        </section>
+
+        <section>
+            <h2>Feature File: Search Functionality</h2>
+            <pre><code>Feature: Search Products
+  Background:
+    Given User is on the products page
+
+  Scenario: Search with valid product name
+    When User enters "Laptop" in the search field
+    And User presses Enter
+    Then Results should display products matching "Laptop"
+    And Results count should be greater than 0
+
+  Scenario: Search with no results
+    When User enters "XYZ12345NonExistent" in the search field
+    And User presses Enter
+    Then "No products found" message should appear
+    And Results list should be empty
+
+  Scenario: Clear search results
+    When User enters "Product" in the search field
+    And User clicks the X button in search field
+    Then Search field should be empty
+    And All products should be displayed again</code></pre>
+        </section>
+
+        <section>
+            <h2>Implementation - Step Definitions (Cypress)</h2>
+            <pre><code>// features/step_definitions/login.js
+import { Given, When, Then } from '@cucumber/cucumber';
+
+Given('User is on the login page', () => {
+  cy.visit('/login');
+});
+
+When('User enters email {string}', (email) => {
+  cy.get('[name="email"]').type(email);
+});
+
+When('User enters password {string}', (password) => {
+  cy.get('[name="password"]').type(password);
+});
+
+When('User clicks the login button', () => {
+  cy.get('button[type="submit"]').click();
+});
+
+Then('User should be redirected to the dashboard', () => {
+  cy.url().should('include', '/dashboard');
+});
+
+Then('User should see {string} message', (message) => {
+  cy.contains(message).should('be.visible');
+});</code></pre>
+        </section>
+
+        <section>
+            <h2>Best Practices untuk Test Cases</h2>
+            <ul>
+                <li>✅ <strong>Clarity:</strong> Test case harus jelas dan mudah dipahami</li>
+                <li>✅ <strong>Independence:</strong> Setiap test case berdiri sendiri, tidak bergantung pada test lain
+                </li>
+                <li>✅ <strong>Repeatability:</strong> Test harus menghasilkan hasil yang sama setiap kali dijalankan
+                </li>
+                <li>✅ <strong>Completeness:</strong> Test case harus mencakup semua scenarios penting</li>
+                <li>✅ <strong>Positive & Negative:</strong> Test case harus mencakup happy path dan error cases</li>
+                <li>✅ <strong>Edge Cases:</strong> Jangan lupa test boundary values dan edge cases</li>
+                <li>✅ <strong>Maintainable:</strong> Test case harus mudah di-update saat ada perubahan</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>BDD Best Practices</h2>
+            <ul>
+                <li>✅ Gunakan language yang business dapat pahami</li>
+                <li>✅ Fokus pada behavior, bukan implementation detail</li>
+                <li>✅ Gunakan concrete examples dengan data spesifik</li>
+                <li>✅ Hindari technical jargon di feature files</li>
+                <li>✅ Organize scenarios dengan Background dan multiple scenarios</li>
+                <li>✅ Gunakan scenario outlines untuk data-driven testing</li>
+                <li>✅ Keep step definitions simple dan reusable</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Pandu Wibisono Subroto, S.T. — QA Portfolio
+    </footer>
+
+    <script src="../assets/js/navigation.js"></script>
+</body>
+
+</html>

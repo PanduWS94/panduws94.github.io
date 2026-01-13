@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writeup Testing - Pandu Wibisono Subroto, S.T.</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SIDEBAR MENU -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>Pandu WS</span>
+            <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html" class="nav-link">🏠 Beranda</a></li>
+            <li><a href="tentang-saya.html" class="nav-link">👤 Tentang Saya</a></li>
+            <li>
+                <button class="submenu-toggle nav-link" href="proyek-automation/">
+                    🧪 Proyek Automation
+                    <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="sidebar-submenu">
+                    <li><a href="proyek-automation/">Overview</a></li>
+                    <li><a href="proyek-automation/api.html">API Testing</a></li>
+                    <li><a href="proyek-automation/web-ui.html">Web UI</a></li>
+                    <li><a href="proyek-automation/mobile.html">Mobile</a></li>
+                </ul>
+            </li>
+            <li><a href="test-case.html" class="nav-link">📋 Test Case / BDD</a></li>
+            <li><a href="bug-report.html" class="nav-link">🐛 Bug Report</a></li>
+            <li><a href="writeup.html" class="nav-link active">✍️ Writeup Testing</a></li>
+        </ul>
+    </aside>
+
+    <header>
+        <h1>Writeup Testing</h1>
+        <p>Tulisan tentang cara berpikir dan pendekatan dalam testing</p>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Beranda</a>
+            <span>/</span>
+            <span>Writeup Testing</span>
+        </div>
+
+        <section id="intro">
+            <h2>Pendahuluan: Mindset Testing yang Benar</h2>
+            <p>
+                Testing bukanlah sekadar mencari bug, tetapi memastikan bahwa setiap fitur bekerja sesuai
+                dengan ekspektasi pengguna dan bisnis. Dalam tulisan ini, saya akan membagikan pemikiran
+                dan pendekatan saya dalam melakukan testing yang efektif dan bermakna.
+            </p>
+        </section>
+
+        <section id="testing-mindset">
+            <h2>Testing Mindset: Berpikir Seperti Pengguna</h2>
+
+            <h3>1. Shift-Left Testing</h3>
+            <p>
+                Jangan menunggu fitur selesai dikembangkan untuk mulai testing. Testing harus dimulai
+                sejak fase requirement dan design. Dengan shift-left testing:
+            </p>
+            <ul>
+                <li>✅ Cacat dapat diidentifikasi lebih awal</li>
+                <li>✅ Biaya perbaikan lebih murah</li>
+                <li>✅ Kualitas final product lebih baik</li>
+                <li>✅ Time-to-market lebih cepat</li>
+            </ul>
+
+            <h3>2. Empathy-Driven Testing</h3>
+            <p>
+                Selalu bayangkan diri Anda sebagai pengguna akhir. Apa yang akan mereka lakukan?
+                Apa yang akan membuat mereka frustrated?
+            </p>
+            <ul>
+                <li>Pikirkan tentang edge cases: "Apa yang bisa salah?"</li>
+                <li>Test dengan data nyata, tidak hanya happy path</li>
+                <li>Perhatikan user experience, bukan hanya functionality</li>
+                <li>Validate terhadap requirement bisnis</li>
+            </ul>
+
+            <h3>3. Risk-Based Testing</h3>
+            <p>
+                Tidak semua fitur memiliki risiko yang sama. Prioritaskan testing untuk area
+                yang memiliki risiko tinggi:
+            </p>
+            <ul>
+                <li>💰 Areas that affect revenue or transactions</li>
+                <li>🔐 Security-sensitive features</li>
+                <li>📊 Critical business logic</li>
+                <li>👥 User-facing features dengan high usage</li>
+            </ul>
+        </section>
+
+        <section id="test-strategy">
+            <h2>Strategi Testing: Test Pyramid</h2>
+            <p>
+                Test Pyramid adalah konsep yang menunjukkan proporsi ideal dari berbagai level testing:
+            </p>
+
+            <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+                <div style="background: #0ea5e9; color: white; padding: 10px; margin: 5px 0; border-radius: 4px;">
+                    <strong>E2E Tests</strong> (10%)
+                </div>
+                <div style="background: #0ea5e9; color: white; padding: 15px; margin: 5px 0; border-radius: 4px;">
+                    <strong>Integration Tests</strong> (30%)
+                </div>
+                <div style="background: #0ea5e9; color: white; padding: 20px; margin: 5px 0; border-radius: 4px;">
+                    <strong>Unit Tests</strong> (60%)
+                </div>
+            </div>
+
+            <h3>Unit Testing (Foundation)</h3>
+            <p>
+                Testing untuk individual functions atau methods. Ini adalah fondasi yang paling penting
+                karena unit tests:
+            </p>
+            <ul>
+                <li>⚡ Cepat dijalankan</li>
+                <li>💰 Murah untuk maintenance</li>
+                <li>🎯 Fokus pada logic</li>
+                <li>🔧 Mudah di-debug</li>
+            </ul>
+
+            <h3>Integration Testing (Middle Layer)</h3>
+            <p>
+                Testing interaksi antara modules atau services. Memastikan components bekerja bersama
+                dengan baik:
+            </p>
+            <ul>
+                <li>🔗 Test API contracts</li>
+                <li>💾 Test database interactions</li>
+                <li>📡 Test service communications</li>
+                <li>🔄 Test data flow</li>
+            </ul>
+
+            <h3>End-to-End Testing (Top Layer)</h3>
+            <p>
+                Testing complete user workflows dari start hingga end. Ini penting tapi harus
+                dilakukan sparingly karena:
+            </p>
+            <ul>
+                <li>⏱️ Slow to execute</li>
+                <li>💸 Expensive to maintain</li>
+                <li>🎭 Flaky (dapat fail for unrelated reasons)</li>
+                <li>🧠 Complex to debug</li>
+            </ul>
+        </section>
+
+        <section id="testing-approach">
+            <h2>Pendekatan Praktis: SAST Framework</h2>
+            <p>
+                Ketika testing sebuah fitur baru, saya menggunakan SAST framework:
+            </p>
+
+            <h3>S - Scenario (Scenarios)</h3>
+            <p>
+                Identifikasi berbagai skenario yang mungkin terjadi:
+            </p>
+            <pre><code>Feature: User Registration
+  Scenario 1: Register dengan email valid dan password sesuai requirements
+  Scenario 2: Register dengan email yang sudah terdaftar
+  Scenario 3: Register dengan password yang tidak sesuai requirements
+  Scenario 4: Register dengan field yang kosong
+  Scenario 5: Register dengan email format invalid</code></pre>
+
+            <h3>A - Actions (Tindakan)</h3>
+            <p>
+                Tentukan tindakan yang akan diambil user untuk setiap scenario:
+            </p>
+            <pre><code>Scenario 2 (Duplicate Email):
+  1. Fill email: existing@email.com
+  2. Fill password: ValidPass123!
+  3. Click Register button
+  4. Observe system response</code></pre>
+
+            <h3>S - States (Status)</h3>
+            <p>
+                Check status application setelah setiap action:
+            </p>
+            <pre><code>After Action 3:
+  - Error message displayed: "Email already registered"
+  - Form is still visible
+  - User remains on registration page
+  - No account created</code></pre>
+
+            <h3>T - Testing (Test Execution)</h3>
+            <p>
+                Execute test dan dokumentasikan hasil:
+            </p>
+            <pre><code>Test Result: FAILED ❌
+  Expected: Error message "Email already registered"
+  Actual: No response, infinite loading spinner
+  
+Severity: Critical
+Recommendation: Investigate API validation logic</code></pre>
+        </section>
+
+        <section id="common-mistakes">
+            <h2>Common Testing Mistakes (dan Cara Menghindarinya)</h2>
+
+            <h3>1. ❌ Hanya Test Happy Path</h3>
+            <p><strong>Problem:</strong> Hanya test "normal" scenario akan membuat bugs slip through.</p>
+            <p><strong>Solution:</strong> Always test negative scenarios dan edge cases:</p>
+            <ul>
+                <li>Empty inputs</li>
+                <li>Invalid data formats</li>
+                <li>Boundary values</li>
+                <li>Error conditions</li>
+                <li>Concurrent operations</li>
+            </ul>
+
+            <h3>2. ❌ Testing Without Requirements</h3>
+            <p><strong>Problem:</strong> Tidak tahu apa yang seharusnya di-test tanpa clear requirements.</p>
+            <p><strong>Solution:</strong> Pastikan requirements jelas sebelum testing:</p>
+            <ul>
+                <li>Clarify ambiguous requirements dengan product owner</li>
+                <li>Document expected behavior secara explicit</li>
+                <li>Create traceability matrix (RTM)</li>
+                <li>Involve stakeholders dalam requirement review</li>
+            </ul>
+
+            <h3>3. ❌ Manual Testing Everything</h3>
+            <p><strong>Problem:</strong> Manual testing tidak scalable dan error-prone.</p>
+            <p><strong>Solution:</strong> Automate repetitive tests:</p>
+            <ul>
+                <li>Identify repetitive test cases</li>
+                <li>Create automation framework</li>
+                <li>Keep automation maintainable</li>
+                <li>Reserve manual testing untuk exploratory dan complex scenarios</li>
+            </ul>
+
+            <h3>4. ❌ Poor Test Data Management</h3>
+            <p><strong>Problem:</strong> Test data yang buruk menyebabkan unreliable tests.</p>
+            <p><strong>Solution:</strong> Implement proper test data strategy:</p>
+            <ul>
+                <li>Use realistic data</li>
+                <li>Create data cleanup procedures</li>
+                <li>Isolate test data (separate dari production)</li>
+                <li>Document test data dependencies</li>
+            </ul>
+
+            <h3>5. ❌ Ignoring Performance Testing</h3>
+            <p><strong>Problem:</strong> Aplikasi mungkin functional tapi lambat.</p>
+            <p><strong>Solution:</strong> Include performance testing:</p>
+            <ul>
+                <li>Measure response times</li>
+                <li>Monitor resource usage</li>
+                <li>Test dengan realistic load</li>
+                <li>Identify bottlenecks early</li>
+            </ul>
+        </section>
+
+        <section id="communication">
+            <h2>Komunikasi Efektif dalam Testing</h2>
+
+            <h3>Cara Melaporkan Bug dengan Baik</h3>
+            <p>
+                Bug report yang baik memudahkan developer untuk fix:
+            </p>
+            <ul>
+                <li>✅ Gunakan title yang descriptive dan specific</li>
+                <li>✅ Sertakan steps to reproduce yang jelas</li>
+                <li>✅ Jelaskan expected vs actual result</li>
+                <li>✅ Lampirkan screenshot/video sebagai evidence</li>
+                <li>✅ Tentukan severity dan priority dengan fair</li>
+                <li>✅ Hindari technical jargon yang unclear</li>
+            </ul>
+
+            <h3>Kolaborasi dengan Developer</h3>
+            <p>
+                Testing bukan tanggung jawab QA saja:
+            </p>
+            <ul>
+                <li>🤝 Involve developer dalam test planning</li>
+                <li>🤝 Discuss edge cases bersama-sama</li>
+                <li>🤝 Share test results dan insights</li>
+                <li>🤝 Celebrate wins bersama</li>
+            </ul>
+        </section>
+
+        <section id="continuous-learning">
+            <h2>Continuous Learning dalam Testing</h2>
+            <p>
+                Dunia testing terus berkembang. Penting untuk selalu belajar:
+            </p>
+
+            <h3>Resources untuk Belajar</h3>
+            <ul>
+                <li>📚 Books: "The Art of Software Testing", "Explore It!"</li>
+                <li>🎓 Online Courses: ISTQB Certification, Udemy courses</li>
+                <li>💬 Communities: QA communities, forums, local meetups</li>
+                <li>📰 Articles & Blogs: Medium, Dev.to, Testing blogs</li>
+                <li>🎬 YouTube Channels: Testing-focused channels</li>
+            </ul>
+
+            <h3>Skills untuk Develop</h3>
+            <ul>
+                <li>💻 Programming skills untuk automation</li>
+                <li>📊 SQL untuk database testing</li>
+                <li>🌐 API testing dengan tools seperti Postman</li>
+                <li>📱 Mobile testing expertise</li>
+                <li>🔒 Security testing mindset</li>
+                <li>📈 Performance & load testing</li>
+            </ul>
+        </section>
+
+        <section id="conclusion">
+            <h2>Kesimpulan</h2>
+            <p>
+                Testing adalah seni dan sains. Seni dalam memahami user perspective dan mindset,
+                sains dalam mengaplikasikan systematic approach dan best practices.
+            </p>
+
+            <p>
+                Key takeaways:
+            </p>
+            <ul>
+                <li>✅ Think like a user, not like a developer</li>
+                <li>✅ Test early and often (shift-left approach)</li>
+                <li>✅ Balance automation dan manual testing</li>
+                <li>✅ Focus on risk and impact</li>
+                <li>✅ Communicate effectively dengan team</li>
+                <li>✅ Never stop learning dan improving</li>
+            </ul>
+
+            <p style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e0e0e0;">
+                <strong>Quality is not an act, it is a habit.</strong> - Aristotle
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Pandu Wibisono Subroto, S.T. — QA Portfolio
+    </footer>
+
+    <script src="../assets/js/navigation.js"></script>
+</body>
+
+</html>
