@@ -1,4 +1,4 @@
-# Pand Wibisono – Personal Portfolio Website
+# Pandu Wibisono – Personal Portfolio Website
 Website portfolio yang menampilkan pengalaman saya sebagai QA Engineer, termasuk proyek automation, dokumentasi QA, dan showcase hasil kerja.
 
 🔗 Live Website  
